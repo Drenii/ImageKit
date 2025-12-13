@@ -2,6 +2,8 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/hello-world")
-async def root():
-    return {"message": "Hello World"}
+text_posts = {}
+
+@app.get("/")
+async def get_all_posts():
+    return text_posts
